@@ -16,11 +16,5 @@ if __name__ == '__main__':
                 input_matrix[i,j] = 0.
             idx = idx + 1
 
-    print(input_matrix)
+    # print(input_matrix)
     maze = Maze(input_matrix)
-    maze.coord2idx(0,0)
-    maze.coord2idx(1,0)
-    maze.coord2idx(1,1)
-    maze.coord2idx(1,2)
-    maze.coord2idx(1,3)
-    maze.coord2idx(2,0)
