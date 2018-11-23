@@ -17,21 +17,22 @@ class Maze():
             for j in range(0, self.m):
                 idx_list = []
                 try:
-                    if (j + 1 != self.m):
-                        if (self.maze[i,j+1] == 1): # Check right
-                            idx_list.append(self.coord2idx(i,j+1))
-                    if(j - 1 >= 0):
-                        if (self.maze[i, j-1] == 1): # Check left
-                            idx_list.append(self.coord2idx(i,j-1))
-                    if(i + 1 != self.n):
-                        if (self.maze[i+1, j] == 1): # Check bottom
-                            idx_list.append(self.coord2idx(i+1,j))
-                    if(i - 1 >= 0):
-                        if (self.maze[i-1, j] == 1): # Check above
-                            idx_list.append(self.coord2idx(i-1,j))
-                    # print(idx_list)
-                    for idx in idx_list:
-                        weight_mat[self.coord2idx(i,j), idx] = 1
+                    if(self.maze[i,j] == 1):
+                        if (j + 1 != self.m):
+                            if (self.maze[i,j+1] == 1): # Check right
+                                idx_list.append(self.coord2idx(i,j+1))
+                        if(j - 1 >= 0):
+                            if (self.maze[i, j-1] == 1): # Check left
+                                idx_list.append(self.coord2idx(i,j-1))
+                        if(i + 1 != self.n):
+                            if (self.maze[i+1, j] == 1): # Check bottom
+                                idx_list.append(self.coord2idx(i+1,j))
+                        if(i - 1 >= 0):
+                            if (self.maze[i-1, j] == 1): # Check above
+                                idx_list.append(self.coord2idx(i-1,j))
+                        # print(idx_list)
+                        for idx in idx_list:
+                            weight_mat[self.coord2idx(i,j), idx] = 1/len(idx_list)
                 except:
                     print('Error at : (' + str(i) + ',' + str(j) + ')')
                     quit()
