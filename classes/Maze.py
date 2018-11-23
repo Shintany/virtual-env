@@ -29,16 +29,22 @@ class Maze():
                     if(i - 1 >= 0):
                         if (self.maze[i-1, j] == 1): # Check above
                             idx_list.append(self.coord2idx(i-1,j))
-                    print(idx_list)
+                    # print(idx_list)
+                    for idx in idx_list:
+                        weight_mat[self.coord2idx(i,j), idx] = 1
                 except:
-                    print('Error at : (' + str(x) + ',' + str(y) + ')')
+                    print('Error at : (' + str(i) + ',' + str(j) + ')')
                     quit()
+        print(weight_mat)
                     
     def coord2idx(self, x, y):
         # print('I received : (' + str(x) + ',' + str(y) + ')')
         value = (x * self.m + y)
         # print(value)
         return value
+
+    def idx2coord(self, idx):
+        return(int( idx/self.m ) , idx%self.m)
 
     def update_weight(self):
         pass
