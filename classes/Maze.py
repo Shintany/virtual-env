@@ -1,13 +1,14 @@
 import numpy as np
 
 class Maze():
-    def __init__(self, x):
+    def __init__(self, x, positive_lambda = 0.1, negative_lambda = 0.4):
+
+        # ------ VARS --------
         self.n = x.shape[0] # Rows
         self.m = x.shape[1] # Columns
-
         self.maze = x
-
-        print(self.maze)
+        self.pos_lmbda = positive_lambda
+        self.neg_lmbda = negative_lambda
         self.weight_mat = self.initialize_weight_mat()
 
     def initialize_weight_mat(self):
@@ -36,7 +37,7 @@ class Maze():
                 except:
                     print('Error at : (' + str(i) + ',' + str(j) + ')')
                     quit()
-        print(weight_mat)
+        # print(weight_mat)
                     
     def coord2idx(self, x, y):
         # print('I received : (' + str(x) + ',' + str(y) + ')')
@@ -49,3 +50,4 @@ class Maze():
 
     def update_weight(self):
         pass
+        

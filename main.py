@@ -4,6 +4,9 @@ import numpy as np
 X_DIMENSION = 4
 Y_DIMENSION = 4
 
+POSITIVE_LAMBDA = 0.1
+NEGATIVE_LAMBDA = 0.4
+
 IDX_OBSTACLES = [7, 9]
 
 if __name__ == '__main__':
@@ -17,5 +20,5 @@ if __name__ == '__main__':
             idx = idx + 1
 
     # print(input_matrix)
-    maze = Maze(input_matrix)
+    maze = Maze(input_matrix, POSITIVE_LAMBDA, NEGATIVE_LAMBDA)
 
