@@ -29,3 +29,4 @@ if __name__ == '__main__':
     # print(input_matrix)
     maze = Maze(input_matrix, POSITIVE_LAMBDA, NEGATIVE_LAMBDA, IDX_BEGIN_ARRIVAL)
 
+    print(foo)
