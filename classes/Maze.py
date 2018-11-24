@@ -56,7 +56,6 @@ class Maze():
     def coord2idx(self, x, y):
         # print('I received : (' + str(x) + ',' + str(y) + ')')
         value = (x * self.m + y)
-        # print(value)
         return value
 
     def idx2coord(self, idx):
@@ -64,4 +63,5 @@ class Maze():
 
     def update_weight(self):
         pass
-        
+            
+
