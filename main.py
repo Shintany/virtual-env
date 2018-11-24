@@ -1,13 +1,20 @@
 from classes.Maze import Maze
+from classes.Robot import Robot
 import numpy as np
 
+# ----- MAZE DIMENSION -------
 X_DIMENSION = 4
 Y_DIMENSION = 4
 
+# ----- REWARD VALUES -------
 POSITIVE_LAMBDA = 0.1
 NEGATIVE_LAMBDA = 0.4
 
+# ----- OBSTACLES INDEX -------
 IDX_OBSTACLES = [7, 9]
+
+# ----- BEGIN & ARRIVAL INDEX -------
+IDX_BEGIN_ARRIVAL = [3, 15]
 
 if __name__ == '__main__':
     input_matrix = np.ones(shape=(X_DIMENSION, Y_DIMENSION))
@@ -20,5 +27,5 @@ if __name__ == '__main__':
             idx = idx + 1
 
     # print(input_matrix)
-    maze = Maze(input_matrix, POSITIVE_LAMBDA, NEGATIVE_LAMBDA)
+    maze = Maze(input_matrix, POSITIVE_LAMBDA, NEGATIVE_LAMBDA, IDX_BEGIN_ARRIVAL)
 

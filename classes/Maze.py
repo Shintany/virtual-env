@@ -1,15 +1,28 @@
 import numpy as np
+from .Robot import Robot
 
 class Maze():
-    def __init__(self, x, positive_lambda = 0.1, negative_lambda = 0.4):
+    def __init__(self, x, positive_lambda = 0.1, negative_lambda = 0.4, idx_beg_arr = [0,0]):
 
-        # ------ VARS --------
+        # ------ MAZE SHAPE --------
         self.n = x.shape[0] # Rows
         self.m = x.shape[1] # Columns
+
+        # ------ MAZE --------
         self.maze = x
+
+        # ------ REWARD VALUES --------
         self.pos_lmbda = positive_lambda
         self.neg_lmbda = negative_lambda
+
+        # ------ MAZE WEIGHT MATRIX --------
         self.weight_mat = self.initialize_weight_mat()
+
+        # ------ MAZE EXIT --------
+        self.arrival = idx_beg_arr[1]
+ 
+        # ------ MAZE ROBOT --------
+        self.robot = Robot(idx_beg_arr[0])
 
     def initialize_weight_mat(self):
         weight_mat = np.zeros(shape=(self.n*self.m,self.n*self.m))
