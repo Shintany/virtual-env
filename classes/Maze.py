@@ -11,6 +11,7 @@ class Maze():
         # ------ MAZE --------
         self.maze = x
 
+        print(self.maze)
         # ------ REWARD VALUES --------
         self.pos_lmbda = positive_lambda
         self.neg_lmbda = negative_lambda
@@ -50,7 +51,7 @@ class Maze():
                 except:
                     print('Error at : (' + str(i) + ',' + str(j) + ')')
                     quit()
-        # print(weight_mat)
+        print(weight_mat)
                     
     def coord2idx(self, x, y):
         # print('I received : (' + str(x) + ',' + str(y) + ')')
